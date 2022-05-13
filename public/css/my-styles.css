@@ -1,0 +1,161 @@
+@font-face {
+    font-family: official-font;
+    src: url(../fonts/Gabriel-Sans-Light.otf);
+}
+
+.logo-wrapper{
+    background-color: #fff;
+    padding: 15px 0px;
+}
+
+.logo-wrapper img{
+    max-width:100%;
+}
+
+.menu-wrapper{
+    background-color: #f1f1f1;
+    border-bottom: 5px solid #6f5499;
+    border-top: 1px solid #eee;
+    box-shadow: 0 0 1px #999;
+}
+
+.main-title{
+    font-family: official-font;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 2.25em;
+}
+
+main{
+    margin: 20px 0px;
+}
+
+/*.nav-tabs {
+    border-bottom: 0px;
+}*/
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link{
+    color: #495057;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #f8fafc;
+}
+
+.footer-top{
+    margin-top: 0;
+    padding: 20px;
+    border-top: none !important;
+    background-color: #333;
+    min-height: 10px;
+    color: #ccc;
+}
+
+.footer-bottom{
+    padding: 15px 0 10px 0;
+    background-color: #222;
+    min-height: 50px;
+    color: #888;
+    border: none;
+}
+
+.footer-bottom-img{
+    text-align: right;
+}
+
+/** Valid curp */
+#valid-curp{
+    /*display: none;*/
+}
+
+/** Tables */
+
+.table thead tr th{
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table tbody tr td{
+    padding: 0.4rem;
+}
+
+.column-delete-dependent{
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+.delete-dependent{
+    color: #fff;
+    background: #c51f1a;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.delete-dependent:hover{
+    cursor: pointer;
+    background: #a21d19;
+}
+
+/**Button**/
+
+.btn-info,.btn-success{
+    color: #fff !important;
+}
+
+#btn-validate-curp{
+    margin-top: 30px;
+}
+
+#txt-curp{
+    text-transform: uppercase;
+}
+
+.btn-circle{ 
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    font-size: 10px;
+    text-align: center;
+    color: #fff;
+    background: #000;
+    border: 1px solid #000;
+} 
+
+.btn-sedeso{
+    color: #fff;
+    background-color: #c5338f;
+    border-color: #c5338f;
+}
+
+.bg-sedeso{
+    background-color: #c5338f;
+    border-color: #c5338f;
+}
+
+.btn-sedeso:hover{
+    color: #fff;
+    background-color: #ab2e7c;
+    border-color: #ab2e7c;
+}
+
+.form-group.required .control-label:after { 
+    content:" *";
+    color:red;
+}
+
+label.error{
+    color: #d01515;
+    width: 100%;
+    margin: 5px 0px 0px 0px;
+    font-weight: bold;
+}
+
+.doc-ok{
+    font-size: 25px;
+    color: green;
+}
+
+@media print
+{    
+    .no-print, .no-print *{
+        display: none !important;
+    }
+}

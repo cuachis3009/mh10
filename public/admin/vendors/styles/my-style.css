@@ -1,0 +1,36 @@
+.main-footer{
+    position: fixed;
+    /*height: 30px;*/
+    width: calc(100% - 280px);
+    background: #fff;
+    padding: 10px;
+    font-size: 12px;
+    right: 0;
+    bottom: 0;
+    z-index: 123;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    -webkit-box-shadow: 0 0 25px rgba(0,0,0,.1);
+    box-shadow: 0 0 25px rgba(0,0,0,.1);
+}
+
+.menu-years{
+    border-top: 1px solid #ffffff47;
+    border-bottom: 1px solid #ffffff47;
+    margin: 0.2em 1em;
+    padding: 1em 0em;
+}
+
+.current-period-selected {
+    color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+}
