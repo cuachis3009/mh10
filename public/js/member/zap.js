@@ -18,7 +18,7 @@ const loc_col = document.getElementById("loc_col-zap");
     }
 });
 */
-municipio.addEventListener("change",function(event){
+/*municipio.addEventListener("change",function(event){
     //let clave = event.target.value;
     let clave = this.options[this.selectedIndex].getAttribute('zap-code');
     cleanOptions(loc_col);  
@@ -30,7 +30,7 @@ municipio.addEventListener("change",function(event){
 
     }
 });
-
+*/
 function loadZapOptions(type,clave){
     /**Realizamos la llamada por axios */
     axios.post('/2022/member/getZap/' + type , {

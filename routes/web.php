@@ -61,6 +61,8 @@ Route::group(["prefix" => "2022", "as" => "2022.","namespace" => "Y2022","middle
 
     Route::post("project/{type_project}/getConocimiento","ProjectController@getConocimiento");
 
+    Route::post("project/{type_project}/getSede","ProjectController@getSede");
+
     /** Members routes */
 
     Route::get("member/{type_project}/create/{slug}","MemberController@create")

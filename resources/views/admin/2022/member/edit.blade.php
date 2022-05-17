@@ -194,11 +194,11 @@
         e_folio.value = {{$member->project->folio}};
 
 
-        const e_municipio_is_ind = document.getElementById("municipio_is_ind");
+        //const e_municipio_is_ind = document.getElementById("municipio_is_ind");
         const e_municipio_ind = document.getElementById("municipio-ind");
         const c_specify_municipio = document.getElementById("c-specify-municipio");
 
-        e_municipio_is_ind.addEventListener("change",function(event){
+        /*e_municipio_is_ind.addEventListener("change",function(event){
             c_specify_municipio.classList.remove("d-none");
             let has_value = event.target.value;
             if(has_value == 1){
@@ -207,7 +207,7 @@
                 c_specify_municipio.style.display = "none";
                 e_municipio_ind.value = "";
             }
-        });
+        });*/
 </script>
 
 @if ($member->cat_municipio_id != null)

@@ -26,6 +26,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\MemberStoreRequest;
 use Illuminate\Support\Facades\Validator;
 use App\Utileria;
+use Illuminate\Support\Facades\Log;
 
 class MemberController extends Controller{
 
@@ -35,7 +36,7 @@ class MemberController extends Controller{
 
         if($project->members->count() >= $project->number_members ){
             if($project->folio == null){
-                $municipios = CatMunicipio::orderBy("clave_numero")->get(); 
+                $municipios = CatMunicipio::orderBy("municipio")->get(); 
                 $asentamientos = CatAsentamiento::orderBy("id")->get();
                 return redirect()->route($project->period->year.".project.complete",["type_project" => $project->type->name,"slug" => $project->slug]);
             }else{
@@ -49,11 +50,11 @@ class MemberController extends Controller{
             $drains = Drainage::all();
             $relationship = RelationShip::all();
             //$municipios = CatMunicipio::Where('indigena', '0')->orderBy("clave_numero")->get();          
-            $municipios = CatMunicipio::orderBy("clave_numero")->get(); 
+            $municipios = CatMunicipio::orderBy("municipio")->get(); 
             //$municipiosIndigenas = CatMunicipio::Where('indigena', '1')->orderBy("clave_numero")->get();          
             $vialidades = CatVialidad::orderBy("id")->get();
             $asentamientos = CatAsentamiento::orderBy("id")->get();
-            $yearsValidaty =range((date("Y")-3),(date("Y")+9));
+            $yearsValidaty =range((date("Y")-10),(date("Y")+9));
             //return view("member.".$project->period->year.".create",compact("project","material_wall","material_roof","material_floor","water_house","drains","relationship","municipios","vialidades","asentamientos","municipiosIndigenas","yearsValidaty"));
             return view("member.".$project->period->year.".create",compact("project","material_wall","material_roof","material_floor","water_house","drains","relationship","municipios","vialidades","asentamientos","yearsValidaty"));
         }
@@ -280,21 +281,32 @@ class MemberController extends Controller{
         $member->sex = $request->post("member-sex");
         $member->rfc = ''; //$request->post("member-rfc");
         //$member->marital_status = $request->post("member-marital_status");
-        $member->age = $request->post("member_age");
+        $member->datebirth = substr($request->datebirth,6,4)."/".substr($request->datebirth,3,2)."/".substr($request->datebirth,0,2);
+        $member->dependent = $request->post("dependent");
+        //$member->age = $request->post("member_age");
         $member->status_rfc = ''; //$request->post("member-status_rfc");
         $member->discharge_date_rfc = ''; //$request->post("member-discharge_date_rfc");
         $member->street = $request->post("street-name");
         $member->exterior_number = $request->post("exterior-street-number");
-        $member->interior_number = $request->post("interior-street-number");
-        //$member->colonia = $request->post("colony-name");
+        $member->interior_number = $request->post("interior-street-number");        
+        
+        //Log::info($request->family_head); 
+        if($request->family_head=='1'){
+            $member->family_head = true;
+        }else{
+            $member->family_head = false;
+        }
+        //$member->family_head = $request->family_head;
+        $member->domicilioINE = $request->input('domicilioINE');
+        $member->colonia = $request->post("loc_col");
         $member->postal_code = $request->post("postal-code");
         //$member->municipio = $request->post("municipio-name");
         //$member->estado = $request->post("estado-name");
-        $member->cat_municipio_id = $request->post("municipio-zap");
-        $member->cat_municipio_id_indigena = $request->post("municipio-ind");
+        $member->cat_municipio_id = $request->post("municipio");
+        //$member->cat_municipio_id_indigena = $request->post("municipio-ind");
         //$member->cat_localidad_id = $request->post("localidad-zap");
         //$member->cat_colonia_id = $request->post("colonia-zap");
-        $member->cat_loc_col_id = $request->post("loc_col-zap");
+        //$member->cat_loc_col_id = $request->post("loc_col-zap");
         $member->cat_tipo_vialidad_id = $request->post("tipo_vialidad");
         $member->cat_tipo_asentamiento_id = $request->post("tipo_asentamiento");   
         $member->referencia_domicilio = $request->post("referencia_domicilio");           
@@ -306,7 +318,15 @@ class MemberController extends Controller{
     public function storeMemberAditionalInfo($request,$member){
         $aditional_info = new MemberAdicionalInformation;
         $aditional_info->member_id = $member->id;
-        $aditional_info->has_disability = $request->post("has-disability");
+        //$aditional_info->has_disability = $request->post("has-disability");
+            
+        Log::info($request->post("has_desability"));
+
+        if( $request->post("has_desability")=='1'){
+            $aditional_info->has_disability  = true;
+        }else{
+            $aditional_info->has_disability  = false;
+        }
         $aditional_info->specify_disability = $request->post("specify-disability");
         $aditional_info->water_type = $request->post("water");
         $aditional_info->has_kitchen = $request->post("has-kitchen");
@@ -322,7 +342,7 @@ class MemberController extends Controller{
         $aditional_info->health_care_service_id = $request->post("health-care-service");
         $aditional_info->returned_migrant = $request->post("returned-migrant");
         $aditional_info->can_read_write = $request->post("can-read-write");
-        //$aditional_info->employment = $request->post("employment");
+        $aditional_info->employment = $request->post("employment");
         $aditional_info->group_indigena = $request->post("group-indigena");
         $aditional_info->years_experience_project = $request->post("years-experience-project");
         $aditional_info->save();

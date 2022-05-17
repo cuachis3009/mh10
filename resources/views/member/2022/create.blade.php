@@ -83,10 +83,14 @@
                 </div>
                 <div class="form-row">
 
-                    <div class="form-group col-md-3 required">
+                    <!--div class="form-group col-md-3 required">
                         <label class="control-label" for="member_age">Edad</label>
                         <input type="number" name="member_age" min="1" maxlength="2"  id="member_age" class="form-control">
-                    </div>
+                    </div-->
+                    <div class="form-group col-md-3">
+                        <label for="datebirth">Fecha Nac.</label>
+                        <input type="text" name="datebirth" id="datebirth" class="form-control" readonly="true">
+                    </div> 
                     <div class="form-group col-md-3 required">
                         <label class="control-label" for="study_member">Nivel máximo de estudios cursados</label>
                         <select name="study_member" id="study_member" class="form-control">
@@ -97,7 +101,19 @@
                             <option value="4">Carrera técnica</option>
                             <option value="5">Licenciatura</option>
                         </select>
-                    </div>   
+                    </div>  
+                    <div class="form-group col-md-3 required">
+                        <label class="control-label" for="employment">Ocupación</label>
+                        <input type="text" name="employment" id="employment" class="form-control">
+                    </div> 
+                    <div class="form-group col-md-2">
+                        <label class="control-label" for="family_head">Jefa o jefe de familia</label><br>     
+                        <select id="family_head" name="family_head" class="form-control">
+                            <option value="">Selecciona una opción</option>
+                            <option value="0">NO</option>
+                            <option value="1">SI</option>
+                        </select>                                          
+                    </div>
                     <!--div class="form-group col-md-3 required">
                         <label class="control-label" for="member-rfc">RFC con homoclave (13 dígitos)</label>
                         <input type="text" name="member-rfc" id="member-rfc" class="form-control">
@@ -117,7 +133,38 @@
                             class="form-control">
                     </div-->
                 </div>
-               
+                <div class="form-row">
+                    <div class="form-group col-md-3 required">
+                        <label class="control-label" for="dependent">Dependientes económicos</label>
+                        <input type="number" name="dependent" id="dependent" class="form-control">
+                    </div> 
+                    <div class="form-group col-md-3">
+                        <label for="has_desability">Discapacidad</label>
+                        <select name="has_desability" id="has_desability" class="form-control">
+                            <option value="">Selecciona una opción</option>
+                            <option value="0">NO</option>
+                            <option value="1">SI</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3 d-none" id="c-specify-disability">
+                        <label class="control-label" for="specify-disability">Indica el tipo de discapacidad</label>
+                        <select name="specify-disability" id="specify-disability" class="form-control">
+                            <option value="0">Selecciona una opción</option>
+                            <option value='VER'>VER</option>
+                            <option value='OÍR'>OÍR</option>
+                            <option value='HABLAR (MUDEZ)'>HABLAR (MUDEZ)</option>
+                            <option value='COMUNICACIÓN Y COMPRENSIÓN DEL LENGUAJE'>COMUNICACIÓN Y COMPRENSIÓN DEL LENGUAJE</option>
+                            <option value='EXTREMIDADES INFERIORES, TRONCO, CUELLO Y CABEZA'>EXTREMIDADES INFERIORES, TRONCO, CUELLO Y CABEZA</option>
+                            <option value='EXTREMIDADES SUPERIORES'>EXTREMIDADES SUPERIORES</option>
+                            <option value='INTELECTUALES (RETRASO MENTAL)'>INTELECTUALES (RETRASO MENTAL)</option>
+                            <option value='CONDUCTUALES(CAMINAR O MOVERSE)'>CONDUCTUALES(CAMINAR O MOVERSE)</option>
+                            <option value='OTRAS MENTALES'>OTRAS MENTALES</option>
+                            <option value='MÚLTIPLES'>MÚLTIPLES</option>
+                            <option value='OTRAS'>OTRAS</option>                           
+                            <option value='DESCONOCIDO'>DESCONOCIDO</option>                      
+                        </select>
+                    </div>
+                </div>
                 <hr>
                 <h3>Dirección</h3>
                 <div class="alert alert-warning" role="alert">
@@ -150,8 +197,8 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-3 required">
-                        <label class="control-label" for="municipio-zap">Selecciona el municipio</label>
-                        <select name="municipio-zap" id="municipio-zap" class="form-control">
+                        <label class="control-label" for="municipio">Selecciona el municipio</label>
+                        <select name="municipio" id="municipio" class="form-control">
                             <option value="">Selecciona una opción</option>
                             @foreach ($municipios as $municipio)
                             <option zap-code="{{$municipio->clave_numero}}" value="{{$municipio->id}}">
@@ -159,10 +206,14 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="form-group col-md-3 required">
+                    <!--div class="form-group col-md-3 required">
                         <label class="control-label" for="loc_col-zap">Selecciona la localidad o colonia</label>
                         <select name="loc_col-zap" id="loc_col-zap" class="form-control"></select>
-                    </div>         
+                    </div-->         
+                    <div class="form-group col-md-3 required">
+                        <label class="control-label" for="loc_col">Localidad o Colonia</label>
+                        <input type="text" name="loc_col" id="loc_col" class="form-control">
+                    </div>
                     <div class="form-group col-md-3 required">
                         <label class="control-label" for="tipo_vialidad">Selecciona el tipo de vialidad</label>
                         <select name="tipo_vialidad" id="tipo_vialidad" class="form-control">
@@ -183,13 +234,22 @@
                     </div>
                 </div> 
                 <div class="form-row">
-                    <div class="form-group col">
+                    <div class="form-group col-md-8">
+                        <label for="project-description">Ingresa tu domicilio idéntico a como esta descrito en tu INE o IFE</label>
+                        <textarea class="form-control" name="domicilioINE" id="domicilioINE" cols="30"
+                            rows="10" style="height:60px"></textarea>
+                    </div>
+                    <div class="col-md-4">
+                        <img height="120px"  class="logo" src="{{ asset('images/ine.png') }}" alt="ine">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
                         <label for="project-description">Referencias del domicilio (Información que facilite identificar la vivienda y ubicación de ésta)</label>
                         <textarea class="form-control" name="referencia_domicilio" id="referencia_domicilio" cols="30"
                             rows="10" style="height:60px"></textarea>
                     </div>
-                </div>
-               
+                </div>               
               
                 @if ($errors->any())
                 <div class="alert alert-danger">
@@ -200,9 +260,7 @@
                     </ul>
                 </div>
                 @endif
-
-                <hr>
-          
+                <hr>          
                 <div class="member-documents">
                     <h3>Documentos (archivos electrónicos en formato PDF)</h3>
                     <div class="form-row">
@@ -239,11 +297,27 @@
 
         
 
-        const e_municipio_is_ind = document.getElementById("municipio_is_ind");
-        const e_municipio_ind = document.getElementById("municipio-ind");
-        const c_specify_municipio = document.getElementById("c-specify-municipio");
+        //const e_municipio_is_ind = document.getElementById("municipio_is_ind");
+        //const e_municipio_ind = document.getElementById("municipio-ind");
+        //const c_specify_municipio = document.getElementById("c-specify-municipio");
+        
+        const has_desability = document.getElementById("has_desability");
+        const e_specify_disability = document.getElementById("specify-disability");        
+        const c_specify_disability = document.getElementById("c-specify-disability");
 
-        e_municipio_is_ind.addEventListener("change",function(event){
+        has_desability.addEventListener("change",function(event){
+            c_specify_disability.classList.remove("d-none");
+            let has_value = event.target.value;
+            if(has_value == 1){
+                c_specify_disability.style.display = "";
+            }else{
+                c_specify_disability.style.display = "none";
+                e_specify_disability.value = "0";
+            }
+        });
+
+
+        /*e_municipio_is_ind.addEventListener("change",function(event){
             c_specify_municipio.classList.remove("d-none");
             let has_value = event.target.value;
             if(has_value == 1){
@@ -252,7 +326,7 @@
                 c_specify_municipio.style.display = "none";
                 e_municipio_ind.value = "";
             }
-        });
+        });*/
           var relationship = JSON.parse('{!! $relationship->toJson() !!}');
 
 </script>

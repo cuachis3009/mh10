@@ -3,6 +3,7 @@ const txt_curp = document.getElementById('txt-curp');
 const txt_name = document.getElementById('name');
 const txt_p_surname = document.getElementById('p_surname');
 const txt_m_surname = document.getElementById('m_surname');
+const txt_datebirth = document.getElementById('datebirth');
 const txt_sluf = document.getElementById("p-slug");
 
 btn_validate_curp.addEventListener('click',function(){
@@ -49,6 +50,7 @@ function validateCurp(curp,slug){
                     txt_name.value = response.data.curp.nombre;
                     txt_p_surname.value = response.data.curp.apellidoPaterno;
                     txt_m_surname.value = response.data.curp.apellidoMaterno;
+                    txt_datebirth.value = response.data.curp.fechaNacimiento;
                     txt_curp.setAttribute('readonly','readonly');
                     btn_validate_curp.setAttribute('disabled','disabled');
                 }else{

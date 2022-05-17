@@ -12,6 +12,7 @@ use App\ProjectType;
 use App\CatMunicipio;
 use App\CatAsentamiento;
 use App\CatEstandar;
+use App\CatCurso;
 use App\CatHorarios;
 use App\CatModalidadLocal;
 use App\CatConocimiento;
@@ -88,10 +89,12 @@ class ProjectController extends Controller
         $municipios = CatMunicipio::orderBy("clave_numero")->get();
         $asentamientos = CatAsentamiento::orderBy("id")->get();
         $ModalidadLocal = CatModalidadLocal::orderBy("id")->get();
-        $Estandares = CatEstandar::orderBy("id")->get();
+        $cursos = CatCurso::orderBy("curso")->get();
+        //$VWsedes = VWsedes::orderBy("municipio")->get();
+        $VWsedes = DB::table('VWsedes')->get();
         $project = Project::where("slug", $slug)->with(["period", "type"])->first();
         if ($project->folio == null) {
-            return view("project." . $project->period->year . ".complete_info", compact("project", "municipios", "asentamientos", "ModalidadLocal","Estandares"));
+            return view("project." . $project->period->year . ".complete_info", compact("project", "municipios", "asentamientos", "ModalidadLocal","cursos","VWsedes"));
         } else {
             return redirect()->route($project->period->year . ".project.succesfully", ["type_project" => $project->type->name, "slug" => $project->slug]);
         }
@@ -755,5 +758,12 @@ class ProjectController extends Controller
         return CatConocimiento::where("cat_estandar_id", $idEstandar)->orderBy("id")->get(["id", "conocimiento"]);
     }
 
+    public function getSede(Request $request)
+    {        
+        $idCurso=$request->idCurso;       
+        $VWsedes = DB::table('VWsedes')->where("cat_curso_id", $idCurso)->get();
+        Log::info($idCurso);
+        return  $VWsedes; //CatConocimiento::where("cat_estandar_id", $idEstandar)->orderBy("id")->get(["id", "conocimiento"]);
+    }
 
 }
