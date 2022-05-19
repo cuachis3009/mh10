@@ -10,13 +10,13 @@
                         <strong>Estandar</strong> : {{$project->name_group}}
                     </div-->
                     <div style="font-size:20px" class="folio">
-                        <strong>Folio</strong> : CRECE-2022-{{$project->zeroFolio}}
+                        <strong>Folio</strong> : MH10-2022-{{$project->zeroFolio}}
                     </div>
                     <p style="font-size:20px">
                         <strong>Fecha de registro</strong>: {{$project->created_at->format("d-m-Y H:i:s")}}
                     </p>
                     <div class="qr-code">
-                        {!! QrCode::size(200)->generate($project->slug."/".$project->zeroFolio) !!}
+                        {!! QrCode::size(200)->generate('https://mujeresyhombresde10/2022/project/nuevo/pdf/'.$project->slug."/".$project->zeroFolio) !!}
                     </div>
                     <br>
                     <a class="btn btn-success" target="_blank" href="{{route($project->period->year.".project.pdf",["type_project" => $project->type->name,"slug" => $project->slug])}}">Descargar mi acuse de registro</a>

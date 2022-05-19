@@ -122,34 +122,35 @@ class ProjectController extends Controller
             ));  
         } 
         /**Validamos que el proyecto este completo y no sobre pase la cantidad a otorgar */
-        $validate_items = $this->validateItems($request, $project);        
-
+        /*$validate_items = $this->validateItems($request, $project);        
         if (!$validate_items["pass"]) { // Si falla la validacion
             return response()->json(array(
                 "res" => false,
                 "msg" => $validate_items["message_error"]
             ));
-        }
+        }*/
        
 
         /**Guardamos los articulos del proyecto */
-        $validate_items = $this->storeItems($request, $project);
+        //$validate_items = $this->storeItems($request, $project);
         /**Guardamos los conocimientos */
-        $validate_Conocimiento = $this->storeConocimiento($request, $project);
+        //$validate_Conocimiento = $this->storeConocimiento($request, $project);tiguan 2021
         /*guardamos los <horarios></horarios>storeHorario*/
         //$validate_horarios = $this->storeHorario($request, $project);
         /**Comenzamos a actualizar a las integrantes marcando su web_registration como finalizado */
-        foreach ($project->members as $member) {
+        /*foreach ($project->members as $member) {
             $member->web_registration = true;
             $member->save();
-        }
+        }*/
 
         $folio = $this->getNextFolio($project->period->id, $project->type->id);
         $project->folio = $folio;
-        $project->cat_estandar_id = $request->post("tipo_estandar");
-        $project->experience_time = $request->post("project-experience-time");
-        $project->objective = $request->post("project-objective");
-        $project->activity_description = $request->post("project-activity-description");
+        $project->cat_sede_p = $request->post("tipo_curso");
+        $project->cat_sede_s = $request->post("tipo_curso_s");
+        $project->cat_sede_t = $request->post("tipo_curso_t");
+        //$project->experience_time = $request->post("project-experience-time");
+        //$project->objective = $request->post("project-objective");
+        //$project->activity_description = $request->post("project-activity-description");
 
         /**Actualizamos el proyecto */
         $project->save();
@@ -290,7 +291,7 @@ class ProjectController extends Controller
         $pdf = PDF::loadView('project.2022.pdf', compact("project", "members"));
         $data["email"]=$members->first()->email;
         $data["client_name"]=$members->first()->fullName;
-        $data["subject"]="Proyectos de Desarrollo Social para la Competitividad en el Estado 2022";
+        $data["subject"]="Mujeres y hombres de 10";
         Mail::send('mails.mail', $data, function ($message) use ($data, $pdf) {
             $message->to($data["email"], $data["client_name"])
                 ->subject($data["subject"])
@@ -762,7 +763,7 @@ class ProjectController extends Controller
     {        
         $idCurso=$request->idCurso;       
         $VWsedes = DB::table('VWsedes')->where("cat_curso_id", $idCurso)->get();
-        Log::info($idCurso);
+        //Log::info($idCurso);
         return  $VWsedes; //CatConocimiento::where("cat_estandar_id", $idEstandar)->orderBy("id")->get(["id", "conocimiento"]);
     }
 

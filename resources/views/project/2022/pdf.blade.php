@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PDSCE-2022-{{$project->zeroFolio}}</title>
+    <title>MH10-2022-{{$project->zeroFolio}}</title>
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -165,16 +165,16 @@
                 <img class="logo" src="{{public_path("images/logos/desarrollosocial.png")}}">
             </div>
             <div class="col-program-name">
-                <p class="title-program">CRECE Morelos "Certifica, Reactiva, Entrega, Crea y Emplea"</p>
+                <p class="title-program">Mujeres y Hombres de 10</p>
             </div>
         </div>
         <div class="qr-folio">           
-            <h2 style="margin:0px">Folio : CRECE-2022-{{$project->zeroFolio}}</h2>
+            <h2 style="margin:0px">Folio : MH10-2022-{{$project->zeroFolio}}</h2>
             <p style="margin: 15px 0px;">Registrado el {{$project->created_at->day}} de
                 {{$project->created_at->format("F")}} del
                 {{$project->created_at->year." ".$project->created_at->format("H:i:s")}}</p>
             <img class="qrcode-image"
-                src="data:image/png;base64, {!! base64_encode(QrCode::format('svg')->size(150)->generate($project->slug."/".$project->folio))
+                src="data:image/png;base64, {!! base64_encode(QrCode::format('svg')->size(150)->generate('https://mujeresyhombresde10/2022/project/nuevo/pdf/'.$project->slug."/".$project->folio))
                 !!} ">
         </div>
         <div class=" info-project">
@@ -209,13 +209,10 @@
                     <tr>
                         <td class="field-name font-mini">Correo electrónico</td>
                         <td class="field-value font-mini">{{$member->email}}</td>
-                        <td class="field-name font-mini">Edad</td>
-                        <td class="field-value font-mini">{{$member->age}}</td>
-                    </tr>                   
-                    <tr>                    
                         <td class="field-name font-mini">Nivel máximo de estudios cursados</td>
                         <td class="field-value font-mini">{{$member->estudios->descripcion}}</td>
                     </tr>                   
+                               
                     <tr>
                         <td colspan="4">
                             <p style="font-size:1.17em!important;" class="text-center">Dirección</p>
@@ -231,7 +228,7 @@
                         <td class="field-name font-mini">Número interior</td>
                         <td class="field-value font-mini">{{($member->interior_number)}}</td>
                         <td class="field-name font-mini">Colonia</td>
-                        <td class="field-value font-mini">{{($member->locCol->loc_col)}}</td>
+                        <td class="field-value font-mini">{{($member->colonia)}}</td>
                     </tr>
                     <tr>
                         <td class="field-name font-mini">Código postal</td>
@@ -244,13 +241,7 @@
                         <td class="field-value font-mini">{{($member->tipoVialidad->descripcion)}}</td>
                         <td class="field-name font-mini">Tipo de asentamiento</td>
                         <td class="field-value font-mini">{{($member->tipoAsentamiento->descripcion)}}</td>
-                    </tr>
-                    <tr>
-                        <td class="field-name font-mini">¿Reside en un municipio indigena?</td>
-                        <td class="field-value font-mini">{{($member->municipioIndigena==NULL)?"No":"Si"}}</td>
-                        <td class="field-name font-mini">Municipio indigena</td>
-                        <td class="field-value font-mini">{{(($member->municipioIndigena!=NULL)?$member->municipioIndigena->municipio:"--")}}</td>
-                    </tr>
+                    </tr>                  
                     <tr>
                         <td class="field-name  font-mini" colspan="4">Referencias del domicilio (Información que
                             facilite identificar la vivienda y ubicación de ésta)</td>
@@ -273,16 +264,16 @@
                         <td class="field-name" colspan="2">Tipo de Proceso</td>
                     </tr>
                     <tr>
-                        <td class="field-value" colspan="2">{{$project->estandar->estandar}}</td>
-                        <td class="field-value" colspan="2">{{$project->estandar->proceso}}</td>
+                        <td class="field-value" colspan="2"> </td>
+                        <td class="field-value" colspan="2"> </td>
                     </tr>
                     <tr>
                         <td class="field-name" colspan="2">Sede</td>
                         <td class="field-name" colspan="2">Domicilio</td>
                     </tr>
                     <tr>
-                        <td class="field-value" colspan="2">{{$project->estandar->sede}}</td>
-                        <td class="field-value" colspan="2">{{$project->estandar->domicilio}}</td>
+                        <td class="field-value" colspan="2"> </td>
+                        <td class="field-value" colspan="2"> </td>
                     </tr>
                     <tr>
                         <td class="field-name" colspan="2">Tiempo de experiencia básica en el Estándar que solicita</td>
