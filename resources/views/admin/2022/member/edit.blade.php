@@ -7,8 +7,7 @@
             <div class="title">
                 <h4>
                     {{Str::upper($member->fullName)}}
-                    <br>Folio :
-                    CRECE-2022-{{$member->project->zeroFolio}}
+                    <br>Folio : MH10-2022-{{$member->project->zeroFolio}}
                 </h4>
             </div>
         </div>
@@ -95,18 +94,9 @@
                     @endforeach
                 </select>
             </div>
-            <div class="form-group col-md-3 required">
-                <label class="control-label" for="loc_col-zap">Selecciona la localidad o colonia</label>
-                <select name="loc_col-zap" id="loc_col-zap" class="form-control">
-                    @foreach ($zona_zap['loc_col_zap'] as $loc_col_zap)
-                     @if($loc_col_zap->id==$member->cat_loc_col_id)
-                     <option value="{{$loc_col_zap->clave_loc_col}}" selected>{{$loc_col_zap->loc_col}}</option>     
-                     @else
-                         
-                     @endif
-                     <option value="{{$loc_col_zap->clave_loc_col}}">{{$loc_col_zap->loc_col}}</option>
-                    @endforeach
-                </select>
+            <div class="form-group col-md-3 required">            
+                <label class="control-label" for="loc_col">Localidad o Colonia</label>
+                <input type="text" name="loc_col" id="loc_col" class="form-control" value="{{$member->colonia}}">
             </div>
             <div class="form-group col-md-3 required">
                 <label class="control-label" for="tipo_vialidad">Selecciona el tipo de vialidad</label>
@@ -138,41 +128,12 @@
         <hr>
         <div class="form-row">
             <div class="form-group col">
-                <label for="project-description">Domicilio (INE/IFE) solo utilizar si esta mal el que registro la ciudadania</label>
+                <label for="project-description">Domicilio idéntico a como esta descrito en tu INE o IFE</label>
                 <textarea class="form-control" name="domicilioINE" id="domicilioINE" cols="30"
                     rows="10" style="height:60px">{{$member->domicilioINE}}</textarea>
             </div>
         </div>  
-        <p>información de zona ZAP</p>
-        <div class="form-row">
 
-            <div class="form-group col-md-3">
-                <label for="municipio_is_ind">¿Reside en un municipio indigena?</label>
-                <select name="municipio_is_ind" id="municipio_is_ind" class="form-control">
-                    <option value="">Selecciona una opción</option>                  
-                    @if ($member->cat_municipio_id_indigena!=null)
-                    <option value="0">No</option>
-                    <option value="1" selected>Si</option>                   
-                    @else
-                    <option value="0" selected>No</option>
-                    <option value="1">Si</option>     
-                    @endif
-                </select>
-            </div>
-            <div class="form-group col-md-3 {{$member->cat_municipio_id_indigena!=null?'':'d-none'}} " id="c-specify-municipio">
-                <label class="control-label" for="municipio-ind">Selecciona tu municipio indigena</label>
-                <select name="municipio-ind" id="municipio-ind" class="form-control">
-                    <option value="">Selecciona una opción</option>
-                    @foreach ($zona_zap['municipiosIndigenas'] as $municipioIndigena)
-                    <option zap-code="{{$municipioIndigena->clave_numero}}" value="{{$municipioIndigena->id}}"
-                         {{$municipioIndigena->id==$member->cat_municipio_id_indigena?'selected':''}}>
-                        {{$municipioIndigena->municipio}}</option>
-                    @endforeach
-                </select>
-            </div>
-
-
-        </div>
         <div class="row">
             <div class="col-md-12">
                 <button type="submit" class="btn btn-success">Guardar información</button>

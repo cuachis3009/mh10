@@ -2,7 +2,7 @@
     <div class="card mb-3">
         <div class="card-header" :class="classProjectStatus(projectStatus)">
             <div class="card-title">
-                Folio : CRECE-2022-{{folio}}
+                Folio : MH10-2022-{{folio}}
             </div>
         </div>
         <a v-if="backToProject !== ''" id="back-to-project" class="btn btn-light btn-sm" v-bind:href="backToProject">Regresar al proyecto</a>

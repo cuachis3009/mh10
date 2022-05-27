@@ -10,8 +10,8 @@ class Utileria
     public function validaPeriodoProyecto($slug)
     {
         $fecha = Carbon::now();
-        $fInicio = Carbon::createFromFormat('Y-m-d H:i:s', '2022-05-03 08:00:00');
-        $fFin = Carbon::createFromFormat('Y-m-d H:i:s', '2022-05-25 23:59:59');
+        $fInicio = Carbon::createFromFormat('Y-m-d H:i:s', '2022-05-06 08:00:00');
+        $fFin = Carbon::createFromFormat('Y-m-d H:i:s', '2022-05-30 23:59:59');
         
         /*Log::info('*************************');
         Log::info($fecha);

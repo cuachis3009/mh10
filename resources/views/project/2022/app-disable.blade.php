@@ -8,8 +8,8 @@
             </div>
             <div class="card-body">
                 <p class="text-justify">
-                    El Sistema Electrónico para el Registro de CRECE Morelos “Certifica, Reactiva, Entrega, Crea y Emplea”,<b> se apertura el día 12 de 
-                    noviembre de 2022 a las 18:46 horas y cerrará el día 17 de noviembre de 2022 a las 18:46 horas;</b> lo anterior de conformidad a lo
+                    El Sistema Electrónico para el Registro de Mujeres y Hombres de 10,<b> se apertura el día 9 de 
+                    junio de 2022 a las 10:00 horas y cerrará el día 17 de junio de 2022 a las 09:59 horas;</b> lo anterior de conformidad a lo
                 establecido en el numeral 9.3 inciso b) de las Reglas de Operación del programa
                 </p>
                 <p class="text-justify">Agradecemos su participación.</p>

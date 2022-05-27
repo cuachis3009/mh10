@@ -134,7 +134,7 @@ class MemberController extends Controller
             "exterior-street-number" => "required",
             "postal-code" => "required|digits:5",
             "municipio-zap" => "required",
-            "loc_col-zap" => "required",
+            "loc_col" => "required",
             "tipo_vialidad" => "required",
             "tipo_asentamiento" => "required",
         ], [
@@ -150,7 +150,7 @@ class MemberController extends Controller
             "postal-code.required" => "Ingresa el código postal.",
             "postal-code.digits" => "El código postal debe estar compuesto por 5 digitos.",            
             "municipio-zap.required" => "Selecciona tu municipio",
-            "loc_col-zap.required" => "Selecciona tu localidad o colonia",
+            "loc_col.required" => "Selecciona tu localidad o colonia",
             "tipo_vialidad.required" => "Selecciona el tipo vialidad",
             "tipo_asentamiento.required" => "Selecciona el tipo de asentamiento",
         ]);
@@ -167,7 +167,7 @@ class MemberController extends Controller
         $member->street = $request->input('street-name');
         $member->exterior_number = $request->input('exterior-street-number');
         $member->interior_number = $request->input('interior-street-number');
-        $member->colonia = $request->input('colony-name');
+        $member->colonia = $request->input('loc_col');
         $member->postal_code = $request->input('postal-code');
         $member->municipio = $request->input('municipio-name');
         $member->estado = $request->input('estado-name');

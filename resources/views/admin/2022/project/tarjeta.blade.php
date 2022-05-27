@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TARJETA-CRECE-2022-C-{{$project->zeroFolio}}</title>
+    <title>TARJETA-MH10-2022-C-{{$project->zeroFolio}}</title>
     <style>
 
         body{
@@ -151,7 +151,7 @@
     </style>
 </head>
 @php
-    $folio = "CRECE-2022-".$project->zeroFolio;
+    $folio = "MH10-2022-".$project->zeroFolio;
     $iterate = 5;
     $sex=0;
     $fullName="";
@@ -191,7 +191,7 @@
                     <img class="logo" src="{{public_path("images/logos/logo-convenio.png")}}">
                 </td>
                 <td>
-                    <p id="program-name">“Programa CRECE Morelos (Certifica, Reactiva, Entrega, Crea y Emplea)”</p>
+                    <p id="program-name">“Programa Mujeres y Hombres de 10”</p>
                     <p id="folio">Acta de Entrega-Recepción de tarjeta bancaria</p>
                 </td>
             </tr>
@@ -203,12 +203,11 @@
             <p class="paragraph">
                 En el municipio de Cuernavaca Morelos, en las oficinas que ocupa la Secretaría de Desarrollo Social del Poder Ejecutivo del Estado de Morelos ubicadas en Avenida Plan
                  de Ayala número 825 Plaza Cristal tercer piso locales 26 y 27, en la Colonia Teopanzolco, siendo las {{\Carbon\Carbon::now()->format('H')}} horas del día {{\Carbon\Carbon::now()->format('d')}} del mes de enero
-                  de 2022 y con fundamento en los numerales 10.7 incisos f), h), i), j), k) de las Reglas de Operación del programa denominado “Programa CRECE Morelos
-                   (Certifica, Reactiva, Entrega, Crea y Emplea)”, la Secretaría de Desarrollo Social en adelante “LA SECRETARÍA”, hace constar que en cumplimiento a lo establecido
+                  de 2022 y con fundamento en los numerales 10.7 incisos f), h), i), j), k) de las Reglas de Operación del programa denominado “Programa Mujeres y Hombres de 10”, la Secretaría de Desarrollo Social en adelante “LA SECRETARÍA”, hace constar que en cumplimiento a lo establecido
                     en las Reglas de Operación y en apego a la normatividad vigente y aplicable, realizó el trámite de la tarjeta bancaria a
                      nombre @if($sex==1) la @else del @endif C. {{$fullName}}, en adelante {{$tipoBeneficiario}}, para recibir el apoyo económico por la cantidad de
                       $12,000.00 (Doce mil pesos 00/100 M.N.) para la adquisición del equipo, mobiliario, insumos y/o materia prima referente al Estándar de 
-                      competencia “{{$project->estandar->estandar}}” registrado con número de folio <b>{{$folio}}</b>, aprobado por el Comité Dictaminador del programa; 
+                      competencia “{}” registrado con número de folio <b>{{$folio}}</b>, aprobado por el Comité Dictaminador del programa; 
                       apoyo que fue transferido a la tarjeta correspondiente a la institución bancaria Banco Mercantil del Norte, S.A. BANORTE, 
                       número <u>{{$card1}}</u>-<u>{{$card2}}</u>-<u>{{$card3}}</u>-<u>{{$card4}}</u>
                       la cual se encuentra fondeada y en este acto se entrega a {{$tipoBeneficiario}}, quien la recibe a su entera satisfacción y desde este momento asume 
@@ -255,7 +254,7 @@
                 </li>
             </ol> 
             <p class="paragraph">
-                c) La forma de presentar la comprobación correspondiente es a través del correo electrónico oficial del programa programa.crecemorelos@morelos.gob.mx enviando 
+                c) La forma de presentar la comprobación correspondiente es a través del correo electrónico oficial del programa mujeresyhombresde10@morelos.gob.mx enviando 
                 las facturas, CFDI y documentos correspondientes en formato PDF, señalando el nombre de {{$tipoBeneficiario}}, número de folio o bien realizando una cita vía 
                 telefónica al número 7773.10.06.40 ext. 66425, para realizar la entrega de la documentación de forma física.
             </p>
@@ -297,8 +296,8 @@
                     <td>
                         <b>POR LA SECRETARÍA DE DESARROLLO SOCIAL DEL PODER EJECUTIVO DEL ESTADO DE MORELOS</b>
                         <br><br><br>_________________________________________________<br><br>
-                        <strong>MELISSA PALOMA VILLADA ARELLANO
-                        <br>DIRECTORA GENERAL DE GESTIÓN SOCIAL<br>Y ECONOMÍA SOLIDARIA</strong>
+                        <strong>HUGO OMAR ARANDA NAVA
+                        <br>DIRECTOR GENERAL DE GESTIÓN SOCIAL<br>Y ECONOMÍA SOLIDARIA</strong>
                     </td>
                    
                 </tr>

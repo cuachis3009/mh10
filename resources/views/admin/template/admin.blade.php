@@ -202,10 +202,10 @@
 		</div>
 		<div class="main-footer">
 			<div>
-				Sistema de administración del Programa de Desarrollo Social para la Competitividad en el Estado de la <a target="_blank" href="http://desarrollosocial.morelos.gob.mx/"><b>Secretaría de Desarrollo Social.</b></a>
+				Sistema de administración del Programa de Mujeres y Hombres de 10, de la <a target="_blank" href="http://desarrollosocial.morelos.gob.mx/"><b>Secretaría de Desarrollo Social.</b></a>
 			</div>
 			<div class="pull-right hidden-xs">
-				<span><b>Version</b> 3.0.0</span>
+				<span><b>Version</b> 4.0.0</span>
 			</div>
 		</div>
 	</div>

@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CONVENIO-CRECE-2022-C-{{$project->zeroFolio}}</title>
+    <title>CONVENIO-MH10-2022-C-{{$project->zeroFolio}}</title>
     <style>
 
         body{
@@ -151,7 +151,7 @@
     </style>
 </head>
 @php
-    $folio = "CRECE-2022-".$project->zeroFolio;
+    $folio = "MH10-2022-".$project->zeroFolio;
     $iterate = 5;
     $sex=0;
     $fullName="";
@@ -196,7 +196,7 @@
                     <img class="logo" src="{{public_path("images/logos/logo-convenio.png")}}">
                 </td>
                 <td>
-                    <p id="program-name">Convenio de Ejecución de “Programa CRECE Morelos (Certifica, Reactiva, Entrega, Crea y Emplea)”</p>
+                    <p id="program-name">Convenio de Ejecución de “Programa Mujeres y Hombres de 10”</p>
                     <p id="folio">{{$folio}}</p>
                 </td>
             </tr>
@@ -206,7 +206,7 @@
     <div class="container-info">
         <div class="content">
             <p class="convenio-init">
-                CONVENIO DE EJECUCIÓN DEL “PROGRAMA CRECE MORELOS (CERTIFICA, REACTIVA, ENTREGA, CREA Y EMPLEA)”, QUE CELEBRAN POR UNA PARTE EL GOBIERNO DEL ESTADO LIBRE Y SOBERANO DE MORELOS, A TRAVÉS DE LA SECRETARÍA DE DESARROLLO SOCIAL, REPRESENTADA EN ESTE ACTO POR SU TITULAR ALFONSO DE JESÚS SOTELO MARTÍNEZ, ASISTIDO POR LA DIRECTORA GENERAL DE GESTIÓN SOCIAL Y ECONOMÍA SOLIDARIA MELISSA PALOMA VILLADA ARELLANO Y LA DIRECTORA DE PROGRAMAS COMPLEMENTARIOS NANCY ELIZABETH REYES VIVEROS, A QUIEN EN LO SUCESIVO Y PARA LOS EFECTOS DEL PRESENTE INSTRUMENTO SE LES DENOMINARÁ “LA SECRETARÍA”, Y POR LA OTRA PARTE     
+                CONVENIO DE EJECUCIÓN DEL “PROGRAMA MUJERES Y HOMBRES DE 10”, QUE CELEBRAN POR UNA PARTE EL GOBIERNO DEL ESTADO LIBRE Y SOBERANO DE MORELOS, A TRAVÉS DE LA SECRETARÍA DE DESARROLLO SOCIAL, REPRESENTADA EN ESTE ACTO POR SU TITULAR ALFONSO DE JESÚS SOTELO MARTÍNEZ, ASISTIDO POR LA DIRECTORA GENERAL DE GESTIÓN SOCIAL Y ECONOMÍA SOLIDARIA MELISSA PALOMA VILLADA ARELLANO Y LA DIRECTORA DE PROGRAMAS COMPLEMENTARIOS NANCY ELIZABETH REYES VIVEROS, A QUIEN EN LO SUCESIVO Y PARA LOS EFECTOS DEL PRESENTE INSTRUMENTO SE LES DENOMINARÁ “LA SECRETARÍA”, Y POR LA OTRA PARTE     
                     @if($sex==1)
                         LA C. {{Str::upper($fullName)}}, BENEFICIARIA  
                     @else
@@ -221,7 +221,7 @@
             <p class="paragraph">3. Que para la ejecución del presente programa se tiene como Fuente de Financiamiento Recursos Fiscales y Procedencia Ingresos Propios, precisando que su pago estará sujeto a la disponibilidad presupuestal existente en el Gobierno del Estado.</p>
             <p class="paragraph">4. <b>Con fecha 27 de agosto de 2022 “LA SECRETARÍA”</b> y el <b>“CONOCER”</b> suscribieron un Convenio General de Colaboración número <b>04/2022/SDS</b>, con el objetivo de establecer los términos para proveer un derecho social fundamental e incentivar a la población a la creación de autoempleo a través de la entrega de apoyos económicos para la adquisición de equipos y herramientas en el Estado de Morelos por parte de la Secretaría de Desarrollo Social y a certificarse en estándares de competencia laborales a través de la entidad paraestatal CONOCER.</p>
             <p class="paragraph">5. <b>Con fecha 15 de octubre de 2022 “LA SECRETARÍA”</b> y el <b>“CONOCER”</b> suscribieron un Convenio General de Colaboración número <b>11/2022/SDS</b>, con el objetivo de establecer vínculos de colaboración y coordinación con la finalidad de propiciar los derechos sociales fundamentales de los morelenses, a través de los prestadores de servicio que llevarán a cabo los procesos de evaluación en las competencias laborales y expidiendo para tal efecto los Certificados de Competencia Laboral.</p>
-            <p class="paragraph">6. <b>Con fecha 11 de noviembre de 2022</b> se publicaron las Reglas de Operación del programa denominado “Programa CRECE Morelos (Certifica, Reactiva, Entrega, Crea y Emplea)”, en adelante <b>“EL PROGRAMA”</b>, en el Periódico Oficial “Tierra y Libertad” número 6009.</p>
+            <p class="paragraph">6. <b>Con fecha 11 de noviembre de 2022</b> se publicaron las Reglas de Operación del programa denominado “Programa Mujeres y Hombres de 10”, en adelante <b>“EL PROGRAMA”</b>, en el Periódico Oficial “Tierra y Libertad” número 6009.</p>
             <p class="paragraph">7. De conformidad con lo establecido en los numerales 10.7, 10.8, 10.9 y 11.2 de las Reglas de Operación de <b>“EL PROGRAMA”</b>, es procedente y necesario celebrar el presente Convenio de Ejecución entre <b>“LAS PARTES”</b>, con el objeto de establecer las condiciones del otorgamiento del apoyo económico, liberación y comprobación de los recursos, verificación de los recursos ejercidos y los derechos y obligaciones a las que se sujetan las personas beneficiarias.</p>            
             <p class="paragraph last-p">8. La solicitud con el número de folio citado al rubro, se encuentra en estatus de aprobado y se hace constar en el Acuerdo xxx tomado por el Comité Dictaminador y que se encuentra publicado en la página oficial de la Secretaría de Desarrollo Social <a href="http://desarrollosocial.morelos.gob.mx">http://desarrollosocial.morelos.gob.mx</a>; lo anterior conforme a lo establecido en el numeral 10.1 inciso a) de las Reglas de Operación del programa.</p>            
             
@@ -232,7 +232,7 @@
             <p class="paragraph last-p">I.3 Para los efectos del presente instrumento jurídico, se señala como domicilio el ubicado en avenida Plan de Ayala, número 825, tercer piso, local 26, Colonia Teopanzolco, Código Postal 62350, en la Ciudad de Cuernavaca, Morelos.</p>            
            
             <h1 class="sub-title-section">II.- DECLARA {{$tipoBeneficiario}} QUE: </h1>
-            <p class="paragraph">II.1 Manifiesta bajo protesta de decir verdad que reconoce ser la persona titular de la solicitud con número de folio <b>{{$folio}}</b>, aprobado para recibir el apoyo económico en el “Programa CRECE Morelos (Certifica, Reactiva, Entrega, Crea y Emplea)”; ser residente en el estado de Morelos, con la capacidad legal, consiente y libre para celebrar el presente instrumento jurídico, y así mismo se identifica con credencial oficial vigente expedida por el Instituto Nacional/Federal Electoral como sigue:</p>           
+            <p class="paragraph">II.1 Manifiesta bajo protesta de decir verdad que reconoce ser la persona titular de la solicitud con número de folio <b>{{$folio}}</b>, aprobado para recibir el apoyo económico en el “Programa Mujeres y Hombres de 10”; ser residente en el estado de Morelos, con la capacidad legal, consiente y libre para celebrar el presente instrumento jurídico, y así mismo se identifica con credencial oficial vigente expedida por el Instituto Nacional/Federal Electoral como sigue:</p>           
             <table id="info-members-table" border="1">
                 <thead>
                     <tr>
@@ -251,7 +251,7 @@
             <p class="paragraph">II.3 Manifiesta que conoce y comprende claramente lo establecido en los numerales 10.5 Criterios de improcedencia y cancelación de las solicitudes de apoyo, 10.7 Del procedimiento para la firma de convenios de ejecución, liberación y comprobación de recursos otorgados, 10.8 Del seguimiento y verificación de los recursos ejercidos y 11 Derechos y Obligaciones de las personas beneficiarias del programa, así mismo, acepta de conformidad y en todos sus términos las condiciones de cumplimiento e incumplimiento según sea el caso; conoce y acepta los términos establecidos aplicables en los casos de incumplimiento que amerita el reintegro de los recursos otorgados, lo cual atenderá cabalmente conforme a las Reglas de Operación del programa y lo establecido en el presente Convenio.</p>
             <p class="paragraph">II.4 Para los efectos del presente Convenio, señala como domicilio para oír y recibir todo tipo de notificaciones y documentos que deriven de los actos inherentes a este instrumento legal y que servirá para practicar las notificaciones aún de carácter personal, las que surtirán todos sus efectos legales, el ubicado en: {{$domIne}}</p>
             <p class="paragraph">II.5 Para efecto de comunicación, coordinación y demás actuaciones o acciones que resulten necesarias para el debido cumplimiento del presente convenio señala como número telefónico {{$tel}} y correo electrónico {{$correo}}.</p>
-            <p class="paragraph last-p">II.6. Bajo protesta de decir vedad manifiesta que a la firma del presente convenio ha realizado su proceso de evaluación, por lo que ha sido dictaminado(a) como “Competente” en el Estándar de Competencia {{$project->estandar->estandar}}, y validado por el Consejo Nacional de Normalización de Certificación de Competencias Laborales CONOCER.</p>
+            <p class="paragraph last-p">II.6. Bajo protesta de decir vedad manifiesta que a la firma del presente convenio ha realizado su proceso de evaluación, por lo que ha sido dictaminado(a) como “Competente” en el Estándar de Competencia {} y validado por el Consejo Nacional de Normalización de Certificación de Competencias Laborales CONOCER.</p>
                         
             <h1 class="sub-title-section">III.- DECLARAN “LAS PARTES” QUE: </h1>
             <p class="paragraph">III.1 Manifiestan estar plenamente conscientes de las obligaciones que asumen con la firma del presente Convenio, que no existe error, dolo, lesión o mala fe, así como cualquier otro vicio que invalide la voluntad de los que en él intervienen; reconociéndose mutuamente la personalidad y capacidad legal con que se ostentan para celebrar el presente convenio y estar conformes con las declaraciones que anteceden.</p>            
@@ -267,8 +267,8 @@
             </h1>
             <p class="paragraph">
                 a) Tener acceso a las reglas de operación del programa;<br>
-                b) Recibir asesoría por parte de la Secretaría a través de la URP, respecto al contenido de las reglas de operación, objetivos, requisitos y alcances del programa en todos sus términos, considerando que dicha asesoría será atendida a través del correo electrónico programa.crecemorelos@morelos.gob.mx, y en caso de ser necesaria la asistencia a las instalaciones de la Secretaría, las personas interesadas deberán realizar una cita con el personal de la URP, vía telefónica al número 7773.10.06.40 ext. 66425, o mediante el correo electrónico disponible, y acatar las disposiciones institucionales que para tal efecto la Secretaría señale;<br>
-                c) Registrar una solicitud de apoyo en el sistema electrónico del programa en la página <a href="http://programacrece.morelos.gob.mx">http://programacrece.morelos.gob.mx</a>;<br>
+                b) Recibir asesoría por parte de la Secretaría a través de la URP, respecto al contenido de las reglas de operación, objetivos, requisitos y alcances del programa en todos sus términos, considerando que dicha asesoría será atendida a través del correo electrónico mujeresyhombresde10@morelos.gob.mx, y en caso de ser necesaria la asistencia a las instalaciones de la Secretaría, las personas interesadas deberán realizar una cita con el personal de la URP, vía telefónica al número 7773.10.06.40 ext. 66425, o mediante el correo electrónico disponible, y acatar las disposiciones institucionales que para tal efecto la Secretaría señale;<br>
+                c) Registrar una solicitud de apoyo en el sistema electrónico del programa en la página <a href="https://mujeresyhombresde10.morelos.gob.mx">https://mujeresyhombresde10.morelos.gob.mx</a>;<br>
                 d) Obtener de forma gratuita el certificado de competencia laboral que otorga el CONOCER, de conformidad y en cumplimiento de las Reglas de Operación de <b>“EL PROGRAMA”</b>;<br>
                 e) Ser informadas por la URP de los términos y alcances del programa, así como de los periodos que conlleva cada uno de los procedimientos, conforme a lo establecido en las reglas de operación;<br>
                 f) Las personas beneficiarias del programa, de conformidad con el artículo 66 de la Ley de Desarrollo Social para el Estado de Morelos, serán registradas en el padrón único de beneficiarios de programas sociales, por lo que, en caso de tener algún inconveniente, deberá manifestarlo por escrito a la URP.
@@ -293,7 +293,7 @@
             <p class="paragraph">
                 <span>TERCERA. DEL ESTANDAR DE COMPETENCIA.-</span> Para la entrega del apoyo económico {{$tipoBeneficiario}} manifiesta conocer el procedimiento 
                 de entrega de recurso otorgado que se realizará una vez aplicadas las evaluaciones que correspondan por parte del CONOCER y habiéndose dictaminado que cumple con 
-                el Estándar de Competencia <b>{{$project->estandar->estandar}}</b> y declarado como “Competentes” y beneficiario(a) del programa, por lo que se procederá efectuar 
+                el Estándar de Competencia <b>{}</b> y declarado como “Competentes” y beneficiario(a) del programa, por lo que se procederá efectuar 
                 las gestiones pertinentes para otorgar el recurso por concepto de apoyo económico.
             </p>                       
             <p class="paragraph">
@@ -331,7 +331,7 @@
                 <p>    
             <p class="paragraph">
                 {{$tipoBeneficiario}}, se obliga a presentar la documentación que comprueba el ejercicio de los recursos recibidos a través del correo electrónico oficial del 
-                programa <a href="mailto:programa,crecemorelos@morelos.gob.mx">programa.crecemorelos@morelos.gob.mx</a> enviando la documentación legible y completa en formato 
+                programa <a href="mailto:mujeresyhombresde10@morelos.gob.mx">mujeresyhombresde10@morelos.gob.mx</a> enviando la documentación legible y completa en formato 
                 PDF, señalando el nombre completo de {{$tipoBeneficiario}}, y el número de folio de solicitud registrado aprobado; o bien realizando <b>una cita vía telefónica 
                 al número 7773.10.06.40 Ext. 66425, para entregar la comprobación presencialmente. En caso de que la o las facturas o CFDI rebasen la cantidad total de 
                 $12,000.00 (Doce mil pesos 00/100 M.N.) y en virtud de que la diferencia fue absorbida por la persona beneficiaria bajo su responsabilidad, la comprobación 
@@ -421,8 +421,8 @@
                     </td>
                     <td>
                         <br><br>_________________________________________________<br><br>
-                        <strong>MELISSA PALOMA VILLADA ARELLANO
-                        <br>DIRECTORA GENERAL DE GESTIÓN SOCIAL<br>Y ECONOMÍA SOLIDARIA</strong>
+                        <strong> HUGO OMAR ARANDA NAVA
+                        <br>DIRECTOR GENERAL DE GESTIÓN SOCIAL<br>Y ECONOMÍA SOLIDARIA</strong>
                     </td>
                 </tr>
                 <tr>

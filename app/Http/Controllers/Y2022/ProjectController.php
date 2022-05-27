@@ -287,8 +287,10 @@ class ProjectController extends Controller
 
         $project = Project::where("slug", $slug)->with(["period", "type", "items"])->first();        
         $members = Member::where("project_id", $project->id)->with(["info.water", "dependents.relationship", "materialWalls"])->get();
+        $wvcursos = DB::table('wvcursos')->where("proyecto_id", $project->id)->get();
+        Log::info($wvcursos);
         //$horarios = CatHorarios::where("project_id", $project->id);
-        $pdf = PDF::loadView('project.2022.pdf', compact("project", "members"));
+        $pdf = PDF::loadView('project.2022.pdf', compact("project", "members","wvcursos"));
         $data["email"]=$members->first()->email;
         $data["client_name"]=$members->first()->fullName;
         $data["subject"]="Mujeres y hombres de 10";
@@ -305,22 +307,23 @@ class ProjectController extends Controller
     {
         $project = Project::where("slug", $slug)->with(["period", "type", "items"])->first();
         $members = Member::where("project_id", $project->id)->with(["info.water", "dependents.relationship", "materialWalls"])->get();
-        
+        $wvcursos = DB::table('wvcursos')->where("proyecto_id", $project->id)->get();
+     
         if ($project != null) {
 
             //return view("project.2022.pdf",compact("project", "members"));
             //$this->sendMail('Probando correo');
 
-            $pdf = PDF::loadView('project.2022.pdf', compact("project", "members"));
+            $pdf = PDF::loadView('project.2022.pdf', compact("project", "members","wvcursos"));
 
-            /*$data["email"]=$members->first()->email;
+            $data["email"]=$members->first()->email;
             $data["client_name"]=$members->first()->fullName;
-            $data["subject"]="Proyectos de Desarrollo Social para la Competitividad en el Estado 2022";
+            $data["subject"]="Mujeres y Hombres de 10";
             Mail::send('mails.mail', $data, function ($message) use ($data, $pdf) {
                 $message->to($data["email"], $data["client_name"])
                     ->subject($data["subject"])
                     ->attachData($pdf->output(), "registro.pdf");
-            });*/
+            });
 
 
 
@@ -328,7 +331,7 @@ class ProjectController extends Controller
             //Mail::to('dursi.sedeso@morelos.gob.mx')->send(new MessageReceived($project));
 
 
-            return $pdf->stream('PIPC-2022-' . strtoupper($project->type->name[0]) . '-' . $project->zeroFolio . '.pdf');
+            return $pdf->stream('MH10-2022-' . strtoupper($project->type->name[0]) . '-' . $project->zeroFolio . '.pdf');
         } else {
             return abort(404);
         }

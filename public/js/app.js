@@ -64663,7 +64663,7 @@ var render = function() {
       [
         _c("div", { staticClass: "card-title" }, [
           _vm._v(
-            "\n            Folio : CRECE-2022-" +
+            "\n            Folio : MH10-2022-" +
               _vm._s(_vm.folio) +
               "\n        "
           )

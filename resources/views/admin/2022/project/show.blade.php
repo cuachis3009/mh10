@@ -69,65 +69,84 @@
             <div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
                 <h6>Impresión de documentos</h6>
                 <hr>
-                <a href="{{route('admin.2022.project.pdf',['type_project' => $project->type->name,'slug' => $project->slug])}}" target="_blank" class="btn btn-success btn-sm" href=""><i class="fa fa-file-text-o" aria-hidden="true"></i> Acuse de registro</a>
+                <a href="{{route('admin.2022.project.pdf',['type_project' => $project->type->name,'slug' => $project->slug])}}" target="_blank" class="btn btn-success btn-sm" href=""><i class="fa fa-file-text-o" aria-hidden="true"></i>Acuse de registro</a>
                 @if (in_array($project->status,array(1,3)))
-                    <a href="{{route('admin.2022.project.convenio',['slug' => $project->slug])}}" target="_blank" class="btn btn-dark btn-sm"><i class="fa fa-file-text-o" aria-hidden="true"></i> Convenio</a>
+                    <a href="{{route('admin.2022.project.convenio',['slug' => $project->slug])}}" target="_blank" class="btn btn-dark btn-sm"><i class="fa fa-file-text-o" aria-hidden="true"></i>Convenio</a>
                 @endif
                 @if (in_array($project->status,array(1,3)))
-                <a href="{{route('admin.2022.project.tarjeta',['slug' => $project->slug])}}" target="_blank" class="btn btn-info btn-sm"><i class="fa fa-file-text-o" aria-hidden="true"></i> Tarjeta</a>
+                <a href="{{route('admin.2022.project.tarjeta',['slug' => $project->slug])}}" target="_blank" class="btn btn-info btn-sm"><i class="fa fa-file-text-o" aria-hidden="true"></i>Acta E-R</a>
                 @endif
                 @if (in_array($project->status,array(1,3)))
-                <a href="{{route('admin.2022.project.carta',['slug' => $project->slug])}}" target="_blank" class="btn btn-secondary btn-sm"><i class="fa fa-file-text-o" aria-hidden="true"></i> Carta</a>
+                <!--a href="{{route('admin.2022.project.carta',['slug' => $project->slug])}}" target="_blank" class="btn btn-secondary btn-sm"><i class="fa fa-file-text-o" aria-hidden="true"></i> Carta</a-->
                 @endif
                 <!--<button id="download-all-docs" data-project="{{$project->slug}}" type="btn" class="btn btn-info btn-sm"><i class="fa fa-file-text-o" aria-hidden="true"></i> Descargar toda la documentación</button>-->
             </div>
         </div>
     </div>
     <div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
-        <h6>Información del estandar</h6>
+        <h6>Información de los Cursos</h6>
         <hr>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="form-group">
-                    <label>Estandar</label>
-                    <textarea class="form-control" style="height:100px" disabled>{{$project->estandar->estandar}}</textarea>                   
+                    <label>Curso (Principal)</label>
+                    <textarea class="form-control" style="height:62px" disabled>{{($wvcursos[0]->CP)}}</textarea>                   
                 </div>
             </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Municipio Sede</label>
+                    <textarea class="form-control" style="height:62px" disabled>{{($wvcursos[0]->MP)}}</textarea>                   
+                </div>
+            </div>       
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Proceso</label>
-                    <textarea class="form-control" style="height:100px" disabled>{{$project->estandar->proceso}}</textarea>                   
+                    <label>Domicilio </label>
+                    <textarea class="form-control" style="height:62px" disabled>{{($wvcursos[0]->DP)}}</textarea>                   
                 </div>
-            </div>
+            </div>          
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="form-group">
-                    <label>Sede</label>
-                    <textarea class="form-control" style="height:100px" disabled>{{$project->estandar->sede}}</textarea>                   
+                    <label>Curso (Segunda opción)</label>
+                    <textarea class="form-control" style="height:62px" disabled>{{($wvcursos[0]->CS)}}</textarea>                   
                 </div>
             </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Municipio Sede</label>
+                    <textarea class="form-control" style="height:62px" disabled>{{($wvcursos[0]->MS)}}</textarea>                   
+                </div>
+            </div>       
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Domicilio</label>
-                    <textarea class="form-control" style="height:100px" disabled>{{$project->estandar->domicilio}}</textarea>                   
+                    <label>Domicilio </label>
+                    <textarea class="form-control" style="height:62px" disabled>{{($wvcursos[0]->DS)}}</textarea>                   
+                </div>
+            </div>          
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Curso (Tercera opción)</label>
+                    <textarea class="form-control" style="height:62px" disabled>{{($wvcursos[0]->CT)}}</textarea>                   
                 </div>
             </div>
-        </div>
-        <div class="row">  
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Municipio Sede</label>
+                    <textarea class="form-control" style="height:62px" disabled>{{($wvcursos[0]->MT)}}</textarea>                   
+                </div>
+            </div>       
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Objetivo de obtener la certificación del Estándar de Competencia</label>
-                    <textarea class="form-control" style="height:100px" disabled>{{$project->objective}}</textarea>
+                    <label>Domicilio </label>
+                    <textarea class="form-control" style="height:62px" disabled>{{($wvcursos[0]->DT)}}</textarea>                   
                 </div>
-            </div>     
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Describa las actividades que usted realizará con la Certificación y entrega del apoyo económico</label>
-                    <textarea class="form-control" style="height:100px" disabled>{{$project->project_description}}</textarea>
-                </div>
-            </div>           
+            </div>          
         </div>
+
         <div class="row">
 
         </div>

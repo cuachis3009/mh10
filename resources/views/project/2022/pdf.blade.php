@@ -241,7 +241,13 @@
                         <td class="field-value font-mini">{{($member->tipoVialidad->descripcion)}}</td>
                         <td class="field-name font-mini">Tipo de asentamiento</td>
                         <td class="field-value font-mini">{{($member->tipoAsentamiento->descripcion)}}</td>
-                    </tr>                  
+                    </tr>  
+                    <tr>
+                        <td class="field-name  font-mini" colspan="4">Domicilio idéntico a como esta descrito en tu INE o IFE</td>
+                    </tr>
+                    <tr>
+                        <td class="field-value  font-mini" colspan="4">{{$member->domicilioINE}}</td>
+                    </tr>                
                     <tr>
                         <td class="field-name  font-mini" colspan="4">Referencias del domicilio (Información que
                             facilite identificar la vivienda y ubicación de ésta)</td>
@@ -249,6 +255,7 @@
                     <tr>
                         <td class="field-value  font-mini" colspan="4">{{$member->referencia_domicilio}}</td>
                     </tr>
+
                 </tbody>
             </table>
            
@@ -257,100 +264,41 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="main-header-table" colspan="4">Datos del estandar</td>
+                        <td class="main-header-table" colspan="6">CURSOS</td>
                     </tr>
                     <tr>
-                        <td class="field-name" colspan="2">Estandar</td>
-                        <td class="field-name" colspan="2">Tipo de Proceso</td>
-                    </tr>
-                    <tr>
-                        <td class="field-value" colspan="2"> </td>
-                        <td class="field-value" colspan="2"> </td>
-                    </tr>
-                    <tr>
-                        <td class="field-name" colspan="2">Sede</td>
+                        <td class="field-name" colspan="2">Curso (Principal)</td>
+                        <td class="field-name" colspan="2">Municipio Sede</td>
                         <td class="field-name" colspan="2">Domicilio</td>
                     </tr>
                     <tr>
-                        <td class="field-value" colspan="2"> </td>
-                        <td class="field-value" colspan="2"> </td>
+                        <td class="field-value" colspan="2">{{($wvcursos[0]->CP)}}</td>
+                        <td class="field-value" colspan="2">{{($wvcursos[0]->MP)}}</td>
+                        <td class="field-value" colspan="2">{{($wvcursos[0]->DP)}}</td>
                     </tr>
                     <tr>
-                        <td class="field-name" colspan="2">Tiempo de experiencia básica en el Estándar que solicita</td>
-                        <td class="field-name" colspan="2"></td>
+                        <td class="field-name" colspan="2">Curso (Segunda opción)</td>
+                        <td class="field-name" colspan="2">Municipio Sede</td>
+                        <td class="field-name" colspan="2">Domicilio</td>
                     </tr>
                     <tr>
-                        <td class="field-value" colspan="2">{{$project->experience_time}}</td>
-                        <td class="field-value" colspan="2"></td>
+                        <td class="field-value" colspan="2">{{($wvcursos[0]->CS)}}</td>
+                        <td class="field-value" colspan="2">{{($wvcursos[0]->MS)}} </td>
+                        <td class="field-value" colspan="2">{{($wvcursos[0]->DS)}} </td>
                     </tr>     
-                    
                     <tr>
-                        <td class="field-name" colspan="4">Conocimientos de competencias laborales</td>
+                        <td class="field-name" colspan="2">Curso (Tercera opción)</td>
+                        <td class="field-name" colspan="2">Municipio Sede</td>
+                        <td class="field-name" colspan="2">Domicilio</td>
                     </tr>
                     <tr>
-                        <td class="field-value" colspan="4">
-                            @foreach ($project->Project_conocimientos as $proj_con)
-                                    <ul>
-                                @foreach ($proj_con->conocimientos as $con)
-                                   
-                                <li>{{$con->conocimiento}}</li>                      
-                                   
-                                @endforeach   
-                                    </ul>                       
-                            @endforeach
-                        
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="field-name" colspan="4">Objetivo que se pretende alcanzar con la actividad económica
-                            que
-                            realizará en el proyecto productivo</td>
-                    </tr>
-                    <tr>
-                        <td class="field-value" colspan="4">{{$project->objective}}</td>
-                    </tr>
-                    <tr>
-                        <td class="field-name" colspan="4">Describa las actividades que usted realizará con la
-                            Certificación y entrega del apoyo económico</td>
-                    </tr>
-                    <tr>
-                        <td class="field-value" colspan="4">{{$project->activity_description}}</td>
+                        <td class="field-value" colspan="2">{{($wvcursos[0]->CT)}}</td>
+                        <td class="field-value" colspan="2">{{($wvcursos[0]->MT)}} </td>
+                        <td class="field-value" colspan="2">{{($wvcursos[0]->DT)}} </td>
                     </tr>
                 </tbody>
             </table>
-
-            <p class="text-center text-bold text-uppercase">Componentes</p>
-            <table border="1" id="info-items">
-                <thead>
-                    <tr>
-                        <th>COMPONENTE</th>
-                        <th>UNIDAD DE MEDIDA</th>
-                        <th>CANTIDAD REQUERIDAD</th>
-                        <th>COSTO UNITARIO</th>
-                        <th>COSTO TOTAL</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{$TOTAL=0}}
-                    @foreach ($project->items as $item)
-                    <tr>
-                        <td class="text-center">{{$item->item}}</td>
-                        <td class="text-center">{{$item->unit}}</td>
-                        <td class="text-center">{{$item->quantity}}</td>
-                        <td>${{number_format($item->price,2,".",",")}}</td>
-                        <td>${{number_format($item->total_cost,2,".",",")}}</td>
-                        {{$TOTAL=$TOTAL+$item->total_cost}}
-                    </tr>
-                    @endforeach
-                </tbody>
-                <tfoot class="thead-light">
-                    <tr>
-                        <th colspan="4" style="text-align: right;">Total</th>
-                        <th style="text-align: left;">${{number_format($TOTAL,2,".",",")}}</th>
-                    </tr>
-                </tfoot>
-            </table>                       
+                      
             <br>            
             <p class="text-center">Documentación ingresada</p>
             <table border="1" id="document-member">
@@ -378,11 +326,21 @@
                     </tr>
                 </thead>
             </table>
-            
- 
+             
             <!--/div-->
             <br><br>
             @endforeach
+            <table border="1">
+                <thead>                    
+                </thead>
+                <tbody>                   
+                    <tr>
+                        <td class="field-name" colspan="12">
+                            El registro de solicitud de apoyo no crea el derecho de ser aprobado, de recibir el apoyo para la capacitación por parte del ICATMOR en el marco del presente programa ni de recibir el paquete de herramientas y/o insumos, ya que la aprobación está sujeta al cumplimiento de las reglas de operación sin excepción, así como de la disponibilidad de espacios en los grupos de capacitación que se conformarán.
+                        </td>                        
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </body>

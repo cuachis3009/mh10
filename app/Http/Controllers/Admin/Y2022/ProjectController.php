@@ -57,8 +57,9 @@ class ProjectController extends Controller
             $query->where('period_id',session('period_id'));
         }])
         ->get()->first();
+        $wvcursos = DB::table('wvcursos')->where("proyecto_id", $project->id)->get();
 
-        return view('admin.2022.project.show',compact('project'));
+        return view('admin.2022.project.show',compact('project',"wvcursos"));
     }
 
     /**
@@ -98,10 +99,11 @@ class ProjectController extends Controller
     public function createPdf($type_project,$slug){
         $project = Project::where("slug",$slug)->with(["period","type","items"])->first();
         $members = Member::where("project_id",$project->id)->with(["info.water","dependents.relationship","materialWalls"])->get();
+        $wvcursos = DB::table('wvcursos')->where("proyecto_id", $project->id)->get();
         if($project != null){
 
             //return view("project.2022.pdf",compact("project"));
-            $pdf = PDF::loadView('project.2022.pdf', compact("project","members"));
+            $pdf = PDF::loadView('project.2022.pdf', compact("project","members","wvcursos"));
             return $pdf->stream('PIPC-2022-'.strtoupper($project->type->name[0]).'-'.$project->zeroFolio.'.pdf');
         }else{
             return abort(404);
@@ -114,6 +116,7 @@ class ProjectController extends Controller
             'project_type_id' => $request->input('type-project'),
             'folio' => $request->input('folio-search')
         ])->get()->pluck('slug')->first();
+       
 
         if($project === null){
             return redirect()->route('admin.2022.not-found');
@@ -139,7 +142,7 @@ class ProjectController extends Controller
                 return view('admin.2022.project.convenio',compact('project'));
             }else{
                 $pdf = PDF::loadView('admin.2022.project.convenio', compact("project"));
-                return $pdf->stream('CONVENIO-CRECE-2022-'.$project->zeroFolio.'.pdf');
+                return $pdf->stream('CONVENIO-MH10-2022-'.$project->zeroFolio.'.pdf');
             }
         }else{
             return redirect()->route('admin.2022.not-found');
@@ -159,7 +162,7 @@ class ProjectController extends Controller
                 return view('admin.2022.project.carta',compact('project'));
             }else{
                 $pdf = PDF::loadView('admin.2022.project.carta', compact("project"));
-                return $pdf->stream('Carta-CRECE-2022-'.$project->zeroFolio.'.pdf');
+                return $pdf->stream('Carta-MH10-2022-'.$project->zeroFolio.'.pdf');
             }
         }else{
             return redirect()->route('admin.2022.not-found');
@@ -180,7 +183,7 @@ class ProjectController extends Controller
                 return view('admin.2022.project.tarjeta',compact('project'));
             }else{
                 $pdf = PDF::loadView('admin.2022.project.tarjeta', compact("project"));
-                return $pdf->stream('Tarjeta-CRECE-2022-'.$project->zeroFolio.'.pdf');
+                return $pdf->stream('Tarjeta-MH10-2022-'.$project->zeroFolio.'.pdf');
             }
         }else{
             return redirect()->route('admin.2022.not-found');

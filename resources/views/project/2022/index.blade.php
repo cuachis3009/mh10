@@ -24,16 +24,23 @@
                 <strong> Objetivos Específicos</strong>
             <ol type="a">
                 <li class="text-justify">
-                    Ofrecer cursos de capacitación para el trabajo en las actividades económicas establecidas en las presentes reglas de operación, mismos que serán impartidos por el ICATMOR de forma gratuita, a las personas beneficiarias del programa.
+                    Suscribir el convenio de colaboración entre la Secretaría y el ICATMOR, mediante el cual se establecerán los acuerdos financieros, operativos y técnicos para la impartición de los cursos de capacitación a favor de la población beneficiaria del presente programa, con la finalidad de dar cumplimiento a los diferentes procesos en tiempo y forma.
                 </li>
                 <li class="text-justify">
-                    Otorgar un paquete básico de herramientas, equipo y/o insumos, en especie, a las personas que concluyan satisfactoriamente el curso de capacitación impartido por el ICATMOR en el marco del presente programa, y obtengan la constancia correspondiente; con la finalidad de facilitar el desarrollo de su actividad económica.
+                    Fomentar la capacitación para el trabajo en alguna de las actividades productivas establecidas en las presentes reglas de operación, mismos que serán pagados por la Secretaría e impartidos por el ICATMOR de forma gratuita, a las personas beneficiarias del programa. 
+                </li>
+                <li class="text-justify">
+                	Otorgar un paquete básico de herramientas y/o insumos, gratuito y en especie por parte de la Secretaría, con un valor aproximado de $2,000.00 (Dos mil pesos 00/100 M.N.), a las personas que concluyan satisfactoriamente el curso de capacitación impartido por el ICATMOR en el marco del presente programa, y obtengan la constancia correspondiente; con la finalidad de facilitar el desarrollo de su actividad productiva.
                 </li>
             </ol>
             <strong>Universo de atención</strong> </br> 
             Mujeres y hombres, de 18 años cumplidos en adelante y en condiciones de pobreza, que preferentemente residan en colonias o localidades clasificadas como Zonas de Atención Prioritaria, muy alta, alta y media marginación de los 36 Municipios del Estado de Morelos.
             </p>
             <hr>
+
+            <p>
+                El registro de solicitud de apoyo no crea el derecho de ser aprobado, de recibir el apoyo para la capacitación por parte del ICATMOR en el marco del presente programa ni de recibir el paquete de herramientas y/o insumos, ya que la aprobación está sujeta al cumplimiento de las reglas de operación sin excepción, así como de la disponibilidad de espacios en los grupos de capacitación que se conformarán.           
+            </p>
             </br>
             <p><strong>
                     Para iniciar el registro de proyecto será necesario consultar el video tutorial para el uso del

@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CARTA-CRECE-2022-C-{{$project->zeroFolio}}</title>
+    <title>CARTA-MH10-2022-C-{{$project->zeroFolio}}</title>
     <style>
 
         body{
@@ -151,7 +151,7 @@
     </style>
 </head>
 @php
-    $folio = "CRECE-2022-".$project->zeroFolio;
+    $folio = "MH10-2022-".$project->zeroFolio;
     $iterate = 5;
     $sex=0;
     $fullName="";
@@ -191,7 +191,7 @@
                     <img class="logo" src="{{public_path("images/logos/logo-convenio.png")}}">
                 </td>
                 <td>
-                    <p id="program-name">“Programa CRECE Morelos (Certifica, Reactiva, Entrega, Crea y Emplea)”</p>
+                    <p id="program-name">“Programa Mujeres y Hombres de 10”</p>
                     <p id="folio">Carta compromiso para la ejecución de procesos administrativos
                     </p>
                 </td>
@@ -207,7 +207,7 @@
                 Fecha: {{\Carbon\Carbon::now()->format('d/m/Y')}}</b>
             </p>             
             <p class="paragraph">
-                Con fundamento en los numerales 9.3, 10.2, 10.4, 10.6, 10.7 10.10 y 11.2 de las Reglas de Operación del programa denominado “Programa CRECE Morelos (Certifica, Reactiva, Entrega, Crea y Emplea)”, confirmo que conozco, comprendo y acepto los procesos administrativos y operativos que se desarrollan en coordinación con la Secretaría de Desarrollo Social para la recepción, ejecución y comprobación de los apoyos económicos que se otorgarán para la adquisición del equipo, mobiliario, insumos y/o materia prima referente al Estándar de competencia registrado con número de folio <b>{{$folio}}</b>, el cual fue aprobado por el Comité Dictaminador del Programa, con los siguientes datos: 
+                Con fundamento en los numerales 9.3, 10.2, 10.4, 10.6, 10.7 10.10 y 11.2 de las Reglas de Operación del programa denominado “Programa Mujeres y Hombres de 10”, confirmo que conozco, comprendo y acepto los procesos administrativos y operativos que se desarrollan en coordinación con la Secretaría de Desarrollo Social para la recepción, ejecución y comprobación de los apoyos económicos que se otorgarán para la adquisición del equipo, mobiliario, insumos y/o materia prima referente al Estándar de competencia registrado con número de folio <b>{{$folio}}</b>, el cual fue aprobado por el Comité Dictaminador del Programa, con los siguientes datos: 
             </p>
             <p class="paragraph">
                <b>Estándar de competencia: {{$project->estandar->estandar}}.</b>
@@ -229,7 +229,7 @@
             </b>
             </p>  
             <p class="paragraph">
-                Preciso que en caso de que la institución bancaria <b>BANORTE</b> realice alguna afectación total o parcial de los recursos económicos en materia del apoyo otorgado por parte del Gobierno del Estado de Morelos, derivado de compromisos contraídos por mi parte previamente con dicha institución, me encuentro con la responsabilidad de dar cabal cumplimiento  a las obligaciones adquiridas con motivo del Programa “CRECE Morelos (Certifica, Reactiva, Entrega, Crea y Emplea)”; por lo que me comprometo a adquirir el equipo, mobiliario, insumos y/o materia prima establecidos en mi solicitud de registro y en caso de no continuar con el proceso, en el mismo periodo realizaré el reintegro de los recursos otorgados por la cantidad total de $12,000.00 (Doce mil pesos 00/100 M.N.) de conformidad con el procedimiento establecido en el numeral 10.7 inciso n) y 10.8 inciso g) de las Reglas de Operación del programa.
+                Preciso que en caso de que la institución bancaria <b>BANORTE</b> realice alguna afectación total o parcial de los recursos económicos en materia del apoyo otorgado por parte del Gobierno del Estado de Morelos, derivado de compromisos contraídos por mi parte previamente con dicha institución, me encuentro con la responsabilidad de dar cabal cumplimiento  a las obligaciones adquiridas con motivo del Programa “Mujeres y Hombres de 10”; por lo que me comprometo a adquirir el equipo, mobiliario, insumos y/o materia prima establecidos en mi solicitud de registro y en caso de no continuar con el proceso, en el mismo periodo realizaré el reintegro de los recursos otorgados por la cantidad total de $12,000.00 (Doce mil pesos 00/100 M.N.) de conformidad con el procedimiento establecido en el numeral 10.7 inciso n) y 10.8 inciso g) de las Reglas de Operación del programa.
             </p>            
             <p class="paragraph">
                 Se suscribe la presente a los {{\Carbon\Carbon::now()->format('d')}} días del mes de diciembre de 2022, en tres tantos originales, anexando a la presente copia simple de mi identificación oficial con fotografía. 
